@@ -42,15 +42,8 @@ ActiveRecord::Schema.define(version: 20170406000656) do
     t.date     "list_due_date"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "user_id"
   end
-
-  create_table "todo_lists_users", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "todo_list_id"
-  end
-
-  add_index "todo_lists_users", ["todo_list_id"], name: "index_todo_lists_users_on_todo_list_id"
-  add_index "todo_lists_users", ["user_id"], name: "index_todo_lists_users_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
