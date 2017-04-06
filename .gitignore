@@ -18,3 +18,5 @@
 
 # Ignore Vim swp files
 *.swp
+# Ignore .rake_tasks~ file
+*~ 
