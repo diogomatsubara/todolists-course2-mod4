@@ -1,5 +1,6 @@
 class TodoItemsController < ApplicationController
-  before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_todo_list
+  before_action :set_todo_item, only: [:show, :edit, :update, :destroy]
 
   # GET /todo_list/:todo_list_id/todo_items/1
   # GET /todo_list/:todo_list_id/todo_items/1.json
@@ -67,6 +68,6 @@ class TodoItemsController < ApplicationController
     end
 
     def set_todo_list
-      @todo_list = params[:todo_list_id]
+      @todo_list = TodoList.find(params[:todo_list_id])
     end
 end
